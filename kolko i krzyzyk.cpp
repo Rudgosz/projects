@@ -22,7 +22,7 @@ using namespace std;
 void drawBoard(string s11, string s12, string s13, string s21, string s22, string s23, string s31, string s32, string s33){
 		
 		
-	string board[9][9]{	{"  "," ","  ","|  "," ","  |","  "," ","  "},
+	string board[9][9]{			{"  "," ","  ","|  "," ","  |","  "," ","  "},
 						{"  ",s11,"  ","|  ",s21,"  |","  ",s31,"  "},
 						{"__","_","__","|__","_","__|","__","_","__"},
 						{"  "," ","  ","|  "," ","  |","  "," ","  "},
