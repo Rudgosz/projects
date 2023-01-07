@@ -83,9 +83,9 @@ int getMoveY(){
 }
 
 
-//bool isWin(string s11, string s21, string s31){
+//bool isWin(string row, string column, ){
 //	
-//	if(s11 == "X" && s21 == "X" && s31 == "X"){
+//	if(){
 //		cout << "Game over!" << endl;
 //		return true;
 //	}
@@ -127,41 +127,45 @@ int main(){
 			
 		int X = getMoveX();
 		int Y = getMoveY();
+	
 		
-		
-		if(usedSq[X][Y] == "g"){
+		if(usedSq[X-1][Y-1] == "g"){
 			
 			if(X == 1 && Y == 1){
 				s11 = mark;
-				usedSq[X][Y] = "used";
+				usedSq[X-1][Y-1] = "used";
 				
 			}else if(X == 1 && Y == 2){
 				s12 = mark;
-				usedSq[X][Y] = "used";
+				usedSq[X-1][Y-1] = "used";
 				
 			}else if(X == 1 && Y == 3){
 				s13 = mark;
-				usedSq[X][Y] = "used";
+				usedSq[X-1][Y-1] = "used";
 				
 			}else if(X == 2 && Y == 1){
 				s21 = mark;
-				usedSq[X][Y] = "used";
+				usedSq[X-1][Y-1] = "used";
 				
 			}else if(X == 2 && Y == 2){
 				s22 = mark;
-				usedSq[X][Y] = "used";
+				usedSq[X-1][Y-1] = "used";
 				
+			}else if(X == 2 && Y == 3){
+				s23 = mark;
+				usedSq[X-1][Y-1] = "used";
+					
 			}else if(X == 3 && Y == 1){
 				s31 = mark;
-				usedSq[X][Y] = "used";
+				usedSq[X-1][Y-1] = "used";
 				
 			}else if(X == 3 && Y == 2){
 				s32 = mark;
-				usedSq[X][Y] = "used";
+				usedSq[X-1][Y-1] = "used";
 				
 			}else if(X == 3 && Y == 3){
 				s33 = mark;
-				usedSq[X][Y] = "used";
+				usedSq[X-1][Y-1] = "used";
 			}
 			
 		}else{
