@@ -22,15 +22,15 @@ using namespace std;
 void drawBoard(string s11, string s12, string s13, string s21, string s22, string s23, string s31, string s32, string s33){
 		
 		
-	string board[9][9]{			{"  "," ","  ","|  "," ","  |","  "," ","  "},
-						{"  ",s11,"  ","|  ",s21,"  |","  ",s31,"  "},
-						{"__","_","__","|__","_","__|","__","_","__"},
-						{"  "," ","  ","|  "," ","  |","  "," ","  "},
-						{"  ",s12,"  ","|  ",s22,"  |","  ",s32,"  "},
-						{"__","_","__","|__","_","__|","__","_","__"},
-						{"  "," ","  ","|  "," ","  |","  "," ","  "},
-						{"  ",s13,"  ","|  ",s23,"  |","  ",s33,"  "},
-						{"  "," ","  ","|  "," ","  |","  "," ","  "}};	
+	string board[9][9] = {	{"  "," ","  ","|  "," ","  |","  "," ","  "},
+						 	{"  ",s11,"  ","|  ",s21,"  |","  ",s31,"  "},
+						 	{"__","_","__","|__","_","__|","__","_","__"},
+						 	{"  "," ","  ","|  "," ","  |","  "," ","  "},
+						 	{"  ",s12,"  ","|  ",s22,"  |","  ",s32,"  "},
+						 	{"__","_","__","|__","_","__|","__","_","__"},
+						 	{"  "," ","  ","|  "," ","  |","  "," ","  "},
+						 	{"  ",s13,"  ","|  ",s23,"  |","  ",s33,"  "},
+						 	{"  "," ","  ","|  "," ","  |","  "," ","  "}};	
 		
 						
 	for(int i = 0; i < 9; i++){
@@ -83,17 +83,32 @@ int getMoveY(){
 }
 
 
-//bool isWin(string row, string column, ){
-//	
-//	if(){
-//		cout << "Game over!" << endl;
-//		return true;
-//	}
-//}
+bool isWin(string s11, string s12, string s13, string s21, string s22, string s23, string s31, string s32, string s33){
+	
+	if(s11 != " " && s11 == s31 && s11 == s21){
+		return true;
+	}else if (s12 != " " && s12 == s32 && s11 == s22){
+		return true;
+	}else if (s13 != " " && s13 == s33 && s13 == s23){
+		return true;
+	}else if (s11 != " " && s11 == s12 && s12 == s13){
+		return true;
+	}else if (s21 != " " && s21 == s22 && s22 == s23){
+		return true;
+	}else if (s31 != " " && s31 == s32 && s32 == s33){
+		return true;
+	}else if (s11 != " " && s11 == s22 && s22 == s33){
+		return true;
+	}else if (s31 != " " && s31 == s22 && s22 == s13){
+		return true;
+	}
+}
 
 
 
 int main(){
+	
+	bool gg = 0;
 	
 	string s11 = " ";
 	string s12 = " ";
@@ -112,8 +127,19 @@ int main(){
 							{"g","g","g"},
 							{"g","g","g"}};
 	
-
+	
+	
 	while(true){
+		
+		//gg = isWin(s11, s21, s31);
+		
+		if(isWin(s11, s12, s13, s21, s22, s23, s31, s32, s33) == true){
+			drawBoard(s11, s12, s13, s21, s22, s23, s31, s32, s33);
+			cout << "Game over" << endl;
+			break;
+		}
+		
+		
 		
 		if(index % 2 == 0){
 			mark = "X";
