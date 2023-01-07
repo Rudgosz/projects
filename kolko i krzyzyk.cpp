@@ -1,10 +1,8 @@
 #include <iostream>
 using namespace std;
 	
-
 void drawBoard(string s11, string s12, string s13, string s21, string s22, string s23, string s31, string s32, string s33){
-		
-		
+			
 	string board[9][9] = {	{"  "," ","  ","|  "," ","  |","  "," ","  "},
 				{"  ",s11,"  ","|  ",s21,"  |","  ",s31,"  "},
 				{"__","_","__","|__","_","__|","__","_","__"},
@@ -14,8 +12,7 @@ void drawBoard(string s11, string s12, string s13, string s21, string s22, strin
 				{"  "," ","  ","|  "," ","  |","  "," ","  "},
 				{"  ",s13,"  ","|  ",s23,"  |","  ",s33,"  "},
 				{"  "," ","  ","|  "," ","  |","  "," ","  "}};	
-		
-						
+								
 	for(int i = 0; i < 9; i++){
 		for(int j = 0; j < 9; j++){
 			cout << board[i][j];
@@ -24,9 +21,6 @@ void drawBoard(string s11, string s12, string s13, string s21, string s22, strin
 	}
 }
 	
-
-
-
 int getMoveX(){
 	
 	int userMoveX;
@@ -43,7 +37,6 @@ int getMoveX(){
 	}			
 }
 
-
 int getMoveY(){
 	
 	int userMoveY;
@@ -59,7 +52,6 @@ int getMoveY(){
 		}	
 	}				
 }
-
 
 bool isWin(string s11, string s12, string s13, string s21, string s22, string s23, string s31, string s32, string s33){
 	
@@ -82,10 +74,7 @@ bool isWin(string s11, string s12, string s13, string s21, string s22, string s2
 	}
 }
 
-
 int main(){
-	
-	bool gg = 0;
 	
 	string s11 = " ";
 	string s12 = " ";
@@ -103,7 +92,7 @@ int main(){
 	string usedSq[3][3] = {	{"g","g","g"},
 				{"g","g","g"},
 				{"g","g","g"}};
-		
+	
 	while(true){
 		
 		if(isWin(s11, s12, s13, s21, s22, s23, s31, s32, s33) == true){
@@ -119,7 +108,8 @@ int main(){
 		}
 				
 		drawBoard(s11, s12, s13, s21, s22, s23, s31, s32, s33);
-					
+		
+		cout << "[" << mark << "]" << endl;		
 		int X = getMoveX();
 		int Y = getMoveY();
 	
