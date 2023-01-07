@@ -1,36 +1,19 @@
-	//s11, s12, s13, s21, s22, s23, s31, s32, s33
-	//string s11 = " ";
-	//string s12 = " ";
-	//string s13 = " ";
-	//string s21 = " ";
-	//string s22 = " ";
-	//string s23 = " ";
-	//string s31 = " ";
-	//string s32 = " ";
-	//string s33 = " ";
-
-
-
 #include <iostream>
 using namespace std;
-
-
-
-
 	
 
 void drawBoard(string s11, string s12, string s13, string s21, string s22, string s23, string s31, string s32, string s33){
 		
 		
 	string board[9][9] = {	{"  "," ","  ","|  "," ","  |","  "," ","  "},
-						 	{"  ",s11,"  ","|  ",s21,"  |","  ",s31,"  "},
-						 	{"__","_","__","|__","_","__|","__","_","__"},
-						 	{"  "," ","  ","|  "," ","  |","  "," ","  "},
-						 	{"  ",s12,"  ","|  ",s22,"  |","  ",s32,"  "},
-						 	{"__","_","__","|__","_","__|","__","_","__"},
-						 	{"  "," ","  ","|  "," ","  |","  "," ","  "},
-						 	{"  ",s13,"  ","|  ",s23,"  |","  ",s33,"  "},
-						 	{"  "," ","  ","|  "," ","  |","  "," ","  "}};	
+				{"  ",s11,"  ","|  ",s21,"  |","  ",s31,"  "},
+				{"__","_","__","|__","_","__|","__","_","__"},
+				{"  "," ","  ","|  "," ","  |","  "," ","  "},
+				{"  ",s12,"  ","|  ",s22,"  |","  ",s32,"  "},
+				{"__","_","__","|__","_","__|","__","_","__"},
+				{"  "," ","  ","|  "," ","  |","  "," ","  "},
+				{"  ",s13,"  ","|  ",s23,"  |","  ",s33,"  "},
+				{"  "," ","  ","|  "," ","  |","  "," ","  "}};	
 		
 						
 	for(int i = 0; i < 9; i++){
@@ -57,12 +40,8 @@ int getMoveX(){
 			return userMoveX;
 			break;
 		}		
-	}
-	
-	
-		
+	}			
 }
-
 
 
 int getMoveY(){
@@ -78,8 +57,7 @@ int getMoveY(){
 			return userMoveY;
 			break;
 		}	
-	}	
-			
+	}				
 }
 
 
@@ -105,7 +83,6 @@ bool isWin(string s11, string s12, string s13, string s21, string s22, string s2
 }
 
 
-
 int main(){
 	
 	bool gg = 0;
@@ -124,37 +101,28 @@ int main(){
 	int index = 0;
 	
 	string usedSq[3][3] = {	{"g","g","g"},
-							{"g","g","g"},
-							{"g","g","g"}};
-	
-	
-	
-	while(true){
+				{"g","g","g"},
+				{"g","g","g"}};
 		
-		//gg = isWin(s11, s21, s31);
+	while(true){
 		
 		if(isWin(s11, s12, s13, s21, s22, s23, s31, s32, s33) == true){
 			drawBoard(s11, s12, s13, s21, s22, s23, s31, s32, s33);
 			cout << "Game over" << endl;
 			break;
-		}
-		
-		
+		}		
 		
 		if(index % 2 == 0){
 			mark = "X";
 		}else{
 			mark = "O";
 		}
-		
-		
+				
 		drawBoard(s11, s12, s13, s21, s22, s23, s31, s32, s33);
-		
-			
+					
 		int X = getMoveX();
 		int Y = getMoveY();
 	
-		
 		if(usedSq[X-1][Y-1] == "g"){
 			
 			if(X == 1 && Y == 1){
@@ -200,18 +168,8 @@ int main(){
 			cout<<endl;
 			continue;
 		}
-		
-
-		
-	
 		index++;	
 	}
 	
-	
-	
-	
-	
-
-
 return 0;
 }
